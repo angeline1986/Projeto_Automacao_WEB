@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20191110 11:29:31.970" generator="Robot 3.1.2 (Python 2.7.17 on win32)">
+<suite source="C:\Projetos\Projeto_AutomationPractice\tests\Automationpractice.robot" id="s1" name="Automationpractice">
+<test id="s1-t1" name="Scenario 01: Search Existing Product">
+<kw name="Given that I am in the home of the site">
+<kw name="Go to site home" library="ResourceSearch">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:32.207" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com'.</msg>
+<status status="PASS" endtime="20191110 11:29:39.918" starttime="20191110 11:29:32.207"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20191110 11:29:41.044" starttime="20191110 11:29:39.919"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${TITLE_PAGE}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:41.051" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20191110 11:29:41.051" starttime="20191110 11:29:41.044"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:41.051" starttime="20191110 11:29:32.207"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:41.052" starttime="20191110 11:29:32.207"></status>
+</kw>
+<kw name="When I search for the product &quot;Blouse&quot;">
+<kw name="Inform product &quot;${PRODUTO}&quot; in site search" library="ResourceSearch">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${TXT_SEARCH}</arg>
+<arg>${PRODUCT}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:41.054" level="INFO">Typing text 'Blouse' into text field 'name=search_query'.</msg>
+<status status="PASS" endtime="20191110 11:29:41.197" starttime="20191110 11:29:41.054"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:41.198" starttime="20191110 11:29:41.053"></status>
+</kw>
+<kw name="Trigger Search" library="ResourceSearch">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BTN_SEARCH}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:41.199" level="INFO">Clicking element 'name=submit_search'.</msg>
+<status status="PASS" endtime="20191110 11:29:42.536" starttime="20191110 11:29:41.198"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:42.536" starttime="20191110 11:29:41.198"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:42.536" starttime="20191110 11:29:41.052"></status>
+</kw>
+<kw name="Then the product &quot;Blouse&quot; should be displayed in the search">
+<kw name="Validate if &quot;${PRODUTO}&quot; was listed" library="ResourceSearch">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CSS_PAGE}</arg>
+</arguments>
+<status status="PASS" endtime="20191110 11:29:42.591" starttime="20191110 11:29:42.539"></status>
+</kw>
+<kw name="Page Should Contain Image" library="SeleniumLibrary">
+<doc>Verifies image identified by ``locator`` is found from current page.</doc>
+<arguments>
+<arg>${CSS_IMG}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:42.619" level="INFO">Current page contains image 'css=#center_column &gt; ul &gt; li &gt; div &gt; div.left-block &gt; div &gt; a.product_img_link &gt; img'.</msg>
+<status status="PASS" endtime="20191110 11:29:42.619" starttime="20191110 11:29:42.591"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${LINK_PRODUCT}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:42.636" level="INFO">Current page contains element 'xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),Blouse)]'.</msg>
+<status status="PASS" endtime="20191110 11:29:42.636" starttime="20191110 11:29:42.619"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:42.636" starttime="20191110 11:29:42.537"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:42.637" starttime="20191110 11:29:42.537"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:42.637" critical="yes" starttime="20191110 11:29:32.207"></status>
+</test>
+<test id="s1-t2" name="Scenario 02: Search for Nonexistent Product">
+<kw name="Given that I am in the home of the site">
+<kw name="Go to site home" library="ResourceSearch">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:42.640" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com'.</msg>
+<status status="PASS" endtime="20191110 11:29:50.863" starttime="20191110 11:29:42.639"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20191110 11:29:51.997" starttime="20191110 11:29:50.864"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>${TITLE_PAGE}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:52.004" level="INFO">Page title is 'My Store'.</msg>
+<status status="PASS" endtime="20191110 11:29:52.004" starttime="20191110 11:29:51.998"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:52.004" starttime="20191110 11:29:42.639"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:52.005" starttime="20191110 11:29:42.639"></status>
+</kw>
+<kw name="When I search for the product &quot;impressora&quot;">
+<kw name="Inform product &quot;${PRODUTO}&quot; in site search" library="ResourceSearch">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${TXT_SEARCH}</arg>
+<arg>${PRODUCT}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:52.007" level="INFO">Typing text 'impressora' into text field 'name=search_query'.</msg>
+<status status="PASS" endtime="20191110 11:29:52.146" starttime="20191110 11:29:52.006"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:52.146" starttime="20191110 11:29:52.006"></status>
+</kw>
+<kw name="Trigger Search" library="ResourceSearch">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BTN_SEARCH}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:52.148" level="INFO">Clicking element 'name=submit_search'.</msg>
+<status status="PASS" endtime="20191110 11:29:53.485" starttime="20191110 11:29:52.147"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:53.485" starttime="20191110 11:29:52.147"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:53.485" starttime="20191110 11:29:52.005"></status>
+</kw>
+<kw name="Then the page should display the message &quot;No results were found for your search &quot;impressora&quot;&quot;">
+<kw name="Validate Error Message &quot;${MENSAGEM_ALERTA}&quot;" library="ResourceSearch">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${MSG_ALERT}</arg>
+</arguments>
+<status status="PASS" endtime="20191110 11:29:53.533" starttime="20191110 11:29:53.487"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${MSG_ALERT}</arg>
+<arg>${MENSAGEM_ALERTA}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:53.534" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/p[@class='alert alert-warning']' contains exact text 'No results were found for your search "impressora"'.</msg>
+<status status="PASS" endtime="20191110 11:29:53.557" starttime="20191110 11:29:53.534"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:53.557" starttime="20191110 11:29:53.486"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:53.557" starttime="20191110 11:29:53.486"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:53.557" critical="yes" starttime="20191110 11:29:42.638"></status>
+</test>
+<test id="s1-t3" name="Scenario 03: Register Customer">
+<kw name="Given that I want to get an email, access disposable email site">
+<kw name="Access the disposable email site" library="ResourceRegister">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL_EMAIL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:53.560" level="INFO">Opening browser 'chrome' to base url 'http://www.moakt.com/pt'.</msg>
+<status status="PASS" endtime="20191110 11:29:56.653" starttime="20191110 11:29:53.560"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20191110 11:29:57.774" starttime="20191110 11:29:56.653"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BTN_GENERATE_EMAIL}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:57.774" level="INFO">Clicking element 'css=input.mail_butt'.</msg>
+<status status="PASS" endtime="20191110 11:29:59.469" starttime="20191110 11:29:57.774"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${COPY_EMAIL}</arg>
+</arguments>
+<status status="PASS" endtime="20191110 11:29:59.582" starttime="20191110 11:29:59.469"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${CSS_EMAIL_GENERATE}</arg>
+</arguments>
+<assign>
+<var>${EMAIL_GENERATE}</var>
+</assign>
+<msg timestamp="20191110 11:29:59.639" level="INFO">${EMAIL_GENERATE} = tnk9p5ezr@disbox.net</msg>
+<status status="PASS" endtime="20191110 11:29:59.639" starttime="20191110 11:29:59.582"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${EMAIL_GENERATE_SET}</arg>
+<arg>${EMAIL_GENERATE}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:59.640" level="INFO">${EMAIL_GENERATE_SET} = tnk9p5ezr@disbox.net</msg>
+<status status="PASS" endtime="20191110 11:29:59.640" starttime="20191110 11:29:59.639"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:59.640" starttime="20191110 11:29:53.559"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:29:59.641" starttime="20191110 11:29:53.559"></status>
+</kw>
+<kw name="When I have an email, I start registering at the online store">
+<kw name="Start registration" library="ResourceRegister">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20191110 11:29:59.644" level="INFO">Opening browser 'chrome' to base url 'http://automationpractice.com'.</msg>
+<status status="PASS" endtime="20191110 11:30:09.828" starttime="20191110 11:29:59.642"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20191110 11:30:10.947" starttime="20191110 11:30:09.829"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BTN_SIGNIN}</arg>
+</arguments>
+<msg timestamp="20191110 11:30:10.947" level="INFO">Clicking element 'css=a.login'.</msg>
+<status status="PASS" endtime="20191110 11:30:13.038" starttime="20191110 11:30:10.947"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${TXT_EMAIL}</arg>
+</arguments>
+<status status="PASS" endtime="20191110 11:30:13.093" starttime="20191110 11:30:13.039"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${TXT_EMAIL}</arg>
+<arg>${EMAIL_GENERATE_SET}</arg>
+</arguments>
+<msg timestamp="20191110 11:30:13.094" level="INFO">Typing text 'tnk9p5ezr@disbox.net' into text field 'css=input#email_create'.</msg>
+<status status="PASS" endtime="20191110 11:30:13.297" starttime="20191110 11:30:13.093"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${BTN_CREAT_ACOUNT}</arg>
+</arguments>
+<msg timestamp="20191110 11:30:13.297" level="INFO">Clicking element 'css=button#SubmitCreate'.</msg>
+<status status="PASS" endtime="20191110 11:30:13.389" starttime="20191110 11:30:13.297"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:30:13.389" starttime="20191110 11:29:59.642"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:30:13.389" starttime="20191110 11:29:59.641"></status>
+</kw>
+<kw name="Then I fill in the registration form">
+<kw name="Fill in registration form" library="ResourceRegister">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${PAGE_FORM}</arg>
+</arguments>
+<status status="PASS" endtime="20191110 11:30:13.427" starttime="20191110 11:30:13.391"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20191110 11:30:16.442" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20191110 11:30:16.442" starttime="20191110 11:30:13.427"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CSS_FIRST_NAME}</arg>
+<arg>${FIRST_NAME}</arg>
+</arguments>
+<msg timestamp="20191110 11:30:16.442" level="INFO">Typing text 'Maria' into text field 'css=#customer_firstname'.</msg>
+<status status="PASS" endtime="20191110 11:30:16.562" starttime="20191110 11:30:16.442"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CSS_LAST_NAME}</arg>
+<arg>${LAST_NAME}</arg>
+</arguments>
+<msg timestamp="20191110 11:30:16.563" level="INFO">Typing text 'Mercedes' into text field 'css=#customer_lastname'.</msg>
+<status status="PASS" endtime="20191110 11:30:16.696" starttime="20191110 11:30:16.563"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CSS_PASSWORD}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<msg timestamp="20191110 11:30:16.697" level="INFO">Typing text 'A123456789' into text field 'css=#passwd'.</msg>
+<status status="PASS" endtime="20191110 11:30:16.838" starttime="20191110 11:30:16.696"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CSS_ADDRESS}</arg>
+<arg>${ADDRESS}</arg>
+</arguments>
+<msg timestamp="20191110 11:30:16.839" level="INFO">Typing text 'West Village' into text field 'css=input#address1'.</msg>
+<status status="PASS" endtime="20191110 11:30:17.014" starttime="20191110 11:30:16.838"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CSS_CITY}</arg>
+<arg>${CITY}</arg>
+</arguments>
+<msg timestamp="20191110 11:30:17.015" level="INFO">Typing text 'Roosevelt' into text field 'css=input#city'.</msg>
+<status status="PASS" endtime="20191110 11:30:17.153" starttime="20191110 11:30:17.014"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${CSS_STATE2}</arg>
+</arguments>
+<msg timestamp="20191110 11:30:17.154" level="INFO">Clicking element 'xpath=//select[@name="id_state"]/option[@value=3]'.</msg>
+<status status="PASS" endtime="20191110 11:30:17.206" starttime="20191110 11:30:17.153"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CSS_ZIPCODE}</arg>
+<arg>${ZIPCODE}</arg>
+</arguments>
+<msg timestamp="20191110 11:30:17.207" level="INFO">Typing text '86039' into text field 'css=input#postcode'.</msg>
+<status status="PASS" endtime="20191110 11:30:17.327" starttime="20191110 11:30:17.206"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CSS_MOBILEPHONE}</arg>
+<arg>${MOBILEPHONE}</arg>
+</arguments>
+<msg timestamp="20191110 11:30:17.327" level="INFO">Typing text '+1 212-463-9653' into text field 'css=input#phone_mobile'.</msg>
+<status status="PASS" endtime="20191110 11:30:17.512" starttime="20191110 11:30:17.327"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${CSS_ADDRESS_ALIAS}</arg>
+<arg>${ADDRESS_ALIAS}</arg>
+</arguments>
+<msg timestamp="20191110 11:30:17.513" level="INFO">Typing text 'West Garden' into text field 'css=input#alias'.</msg>
+<status status="PASS" endtime="20191110 11:30:17.663" starttime="20191110 11:30:17.512"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${CSS_BTN_SUBMIT}</arg>
+</arguments>
+<msg timestamp="20191110 11:30:17.664" level="INFO">Clicking element 'css=button#submitAccount'.</msg>
+<status status="PASS" endtime="20191110 11:30:19.402" starttime="20191110 11:30:17.664"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:30:19.402" starttime="20191110 11:30:13.390"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:30:19.403" starttime="20191110 11:30:13.390"></status>
+</kw>
+<kw name="And I'm automatically redirected to my account">
+<kw name="Manage account data" library="ResourceRegister">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${CSS_LIST_ACCOUNT}</arg>
+</arguments>
+<status status="PASS" endtime="20191110 11:30:19.446" starttime="20191110 11:30:19.404"></status>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>${CSS_WELCOME}</arg>
+</arguments>
+<msg timestamp="20191110 11:30:19.476" level="INFO">Current page contains element 'css=p.info-account'.</msg>
+<status status="PASS" endtime="20191110 11:30:19.476" starttime="20191110 11:30:19.446"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:30:19.476" starttime="20191110 11:30:19.403"></status>
+</kw>
+<kw name="Check Success Message" library="ResourceRegister">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${CSS_WELCOME}</arg>
+</arguments>
+<assign>
+<var>${CSS_WELCOME_TEXT}</var>
+</assign>
+<msg timestamp="20191110 11:30:19.508" level="INFO">${CSS_WELCOME_TEXT} = Welcome to your account. Here you can manage all of your personal information and orders.</msg>
+<status status="PASS" endtime="20191110 11:30:19.508" starttime="20191110 11:30:19.477"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${CSS_WELCOME_TEXT}</arg>
+<arg>${CONFIRMATION_ACOUNT}</arg>
+</arguments>
+<status status="PASS" endtime="20191110 11:30:19.509" starttime="20191110 11:30:19.509"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:30:19.510" starttime="20191110 11:30:19.476"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:30:19.510" starttime="20191110 11:30:19.403"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:30:19.510" critical="yes" starttime="20191110 11:29:53.558"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="ResourceRegister">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20191110 11:30:28.287" starttime="20191110 11:30:19.513"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:30:28.287" starttime="20191110 11:30:19.512"></status>
+</kw>
+<status status="PASS" endtime="20191110 11:30:28.287" starttime="20191110 11:29:31.970"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Automationpractice" pass="3">Automationpractice</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
